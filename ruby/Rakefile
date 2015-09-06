@@ -15,5 +15,5 @@ task :default => :test
 
 desc 'Run the client'
 task :run do
-  sh 'jruby -I lib lib/app.rb'
+  sh 'ruby -I lib lib/run.rb'
 end

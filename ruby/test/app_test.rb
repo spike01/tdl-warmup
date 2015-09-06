@@ -8,7 +8,7 @@ class ClientTest < Minitest::Test
 
 
   def test_sum_should_work
-    assert_equal sum(1, 2), 3, 'Different sum.'
+    assert_equal App.sum(1, 2), 3, 'Different sum.'
   end
 
 end
