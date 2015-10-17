@@ -5,10 +5,14 @@ group 'competition'
 
 repositories {
     mavenCentral()
+
+    maven {
+        url  "http://dl.bintray.com/julianghionoiu/maven"
+    }
 }
 
 dependencies {
-    compile 'ro.ghionoiu:tdl-client-java:0.0.9'
+    compile 'ro.ghionoiu:tdl-client-java:0.2.0'
 
     testCompile ('junit:junit:4.12') {
         exclude module : 'hamcrest-core'
