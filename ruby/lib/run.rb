@@ -7,10 +7,11 @@ require_relative './app'
 app = App.new
 
 #  STEP 1: Set the username as your name
-client = TDL::Client.new('172.20.10.2', 61613, 'peter')
+client = TDL::Client.new(hostname: '172.20.10.2', username: 'username')
 
 include TDL::ClientActions
 rules = TDL::ProcessingRules.new
+
 rules.on('display_description').call(app.method(:display)).then(publish)
 rules.on('display_required_methods').call(app.method(:display)).then(publish)
 
