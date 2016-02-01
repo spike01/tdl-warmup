@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'ro.ghionoiu:tdl-client-java:0.3.1'
+    compile 'ro.ghionoiu:tdl-client-java:0.6.2'
 
     testCompile ('junit:junit:4.12') {
         exclude module : 'hamcrest-core'
@@ -27,10 +27,13 @@ dependencies {
 
 apply plugin: 'application'
 
-mainClassName = 'competition.warmup.App'
+mainClassName = 'competition.warmup.Run'
 
 run {
     standardInput = System.in
+
+    def ready = System.getProperty('ready', 'false')
+    args([ ready ])
 }
 
 jar {

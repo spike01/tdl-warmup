@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.equalTo;
 /**
  * Created by julianghionoiu on 23/08/2015.
  */
-public class AppTest {
+public class RunTest {
 
     @Test
     public void compute_sum() {
