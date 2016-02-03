@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'ro.ghionoiu:tdl-client-java:0.6.2'
+    compile 'ro.ghionoiu:tdl-client-java:0.7.1'
 
     testCompile ('junit:junit:4.12') {
         exclude module : 'hamcrest-core'
