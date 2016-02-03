@@ -45,8 +45,7 @@ public class Run {
                 .create();
 
         ProcessingRules processingRules = new ProcessingRules() {{
-            on("display_description").call(Run::displayInfo).then(publish());
-            on("display_required_methods").call(Run::displayInfo).then(publish());
+            on("display_description").call(Run::displayDescription).then(publish());
             on("sum").call(App::sum).then(publishIf(ready));
         }};
 
@@ -55,11 +54,12 @@ public class Run {
 
     //~~~~~~~ User implementations ~~~~~~~~~~~~~~
 
-    private static String displayInfo(String[] params) {
-        return displayInfo(params[0]);
+    private static String displayDescription(String[] params) {
+        return displayDescription(params[0], params[1]);
     }
 
-    private static String displayInfo(String info) {
+    private static String displayDescription(String roundId, String info) {
+        System.out.println("Starting round: "+roundId);
         System.out.println(info);
         return "OK";
     }
