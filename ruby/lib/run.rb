@@ -9,7 +9,7 @@ include TDL::ClientActions
 
 # ~~~~~~~~~ Setup ~~~~~~~~~
 
-I_AM_READY = true
+I_AM_READY = false
 
 # ~~~  How to run ~~~
 #
