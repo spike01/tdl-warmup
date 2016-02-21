@@ -21,7 +21,7 @@ def configure_logging():
 
 # ~~~~~~~~~ Setup ~~~~~~~~~
 
-I_AM_READY = True
+I_AM_READY = False
 
 
 def main(args):
