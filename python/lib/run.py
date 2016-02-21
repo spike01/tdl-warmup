@@ -21,13 +21,23 @@ def configure_logging():
 
 # ~~~~~~~~~ Setup ~~~~~~~~~
 
+I_AM_READY = True
+
 
 def main(args):
     """
-       To run without publishing:                  PYTHONPATH=lib python lib/run.py
-       To go live, run and publish all responses:  PYTHONPATH=lib python lib/run.py ready
+      ~~~  How to run ~~~
+
+      From command line:
+         If you want to trial run:     PYTHONPATH=lib python lib/run.py
+         If you are ready to go live:  PYTHONPATH=lib python lib/run.py ready
+
+      From IDE:
+         Run this class from IDE.
+         Set the I_AM_READY variable to "true" if ready to go live
     """
-    ready = True if (len(args) > 0 and args[0] == "ready") else False
+    value_from_commandline = len(args) > 0 and args[0] == "ready"
+    ready = True if value_from_commandline else I_AM_READY
     print("Ready ? = {}".format(ready))
 
     start_client(ready)

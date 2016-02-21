@@ -11,6 +11,7 @@ import static tdl.client.actions.ClientActions.stop;
  * Created by julianghionoiu on 23/08/2015.
  */
 public class Run {
+    private static final boolean I_AM_READY = false;
 
     /**
      * ~~~  How to run ~~~
@@ -21,14 +22,12 @@ public class Run {
      *
      * From IDE:
      *    Run this class from IDE.
-     *    Set the ARE_YOU_READY variable to "true" if ready to go live
+     *    Set the I_AM_READY variable to "true" if ready to go live
      */
-    private static final boolean ARE_YOU_READY = false;
-
     @SuppressWarnings({"PointlessBooleanExpression", "ConstantConditions"})
     public static void main(String[] args) throws Exception {
         boolean valueFromCommandline = args.length > 0 && Boolean.parseBoolean(args[0]);
-        boolean ready = ARE_YOU_READY || valueFromCommandline;
+        boolean ready = I_AM_READY || valueFromCommandline;
         System.out.println("Ready ? = "+ready);
 
         startClient(ready);
