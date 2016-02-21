@@ -15,5 +15,7 @@ task :default => :test
 
 desc 'Run the client'
 task :run do
-  sh 'ruby -I lib lib/run.rb'
+  ready = ENV['ready'] == 'true' ? true : false
+
+  sh "ruby -I lib lib/run.rb #{ready}"
 end

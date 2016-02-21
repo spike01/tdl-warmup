@@ -12,8 +12,8 @@ class ClientTest < Minitest::Test
 
   attr_reader :app
 
-  def test_increments
-    assert_equal app.increment(2), 3, 'App should increment a number'
+  def test_sum
+    assert_equal app.sum(1, 2), 3, 'App should add two numbers'
   end
 
 end
