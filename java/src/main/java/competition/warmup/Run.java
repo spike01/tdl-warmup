@@ -1,8 +1,12 @@
 package competition.warmup;
 
+import com.google.common.io.Files;
 import tdl.client.Client;
 import tdl.client.ProcessingRules;
 import tdl.client.actions.ClientAction;
+
+import java.io.File;
+import java.io.IOException;
 
 import static tdl.client.actions.ClientActions.publish;
 import static tdl.client.actions.ClientActions.stop;
@@ -40,7 +44,7 @@ public class Run {
                 .create();
 
         ProcessingRules processingRules = new ProcessingRules() {{
-            on("display_description").call(p -> displayDescription(p[0], p[1])).then(publish());
+            on("display_description").call(p -> displayAndSaveDescription(p[0], p[1])).then(publish());
             on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
         }};
 
@@ -53,9 +57,19 @@ public class Run {
 
     //~~~~~~~ Provided implementations ~~~~~~~~~~~~~~
 
-    private static String displayDescription(String label, String description) {
+    private static String displayAndSaveDescription(String label, String description) {
         System.out.println("Starting round: "+label);
         System.out.println(description);
+
+        //Save description
+        File descriptionFile = new File("challenges" + File.separator + label + ".txt");
+        try {
+            Files.write(description.getBytes(), descriptionFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Challenge description saved to file: "+descriptionFile.getPath()+".");
+
         return "OK";
     }
 

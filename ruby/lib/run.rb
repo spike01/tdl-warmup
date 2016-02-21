@@ -50,7 +50,7 @@ def display_description(label, description)
   output = File.open("challenges/#{label}.txt", 'w')
   output << description
   output.close
-  puts "Challenge description saved to file #{output.path}."
+  puts "Challenge description saved to file: #{output.path}."
   'OK'
 end
 
