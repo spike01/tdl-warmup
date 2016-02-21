@@ -47,7 +47,7 @@ def start_client(ready):
     client = Client(hostname='localhost', username='julian')
 
     rules = ProcessingRules()
-    rules.on("display_description").call(display_description).then("publish")
+    rules.on("display_description").call(display_and_save_description).then("publish")
     rules.on("sum").call(App.sum).then(publish_if(ready))
 
     client.go_live_with(rules)
@@ -59,9 +59,15 @@ def publish_if(ready):
 
 # ~~~~~~~~~ Provided implementations ~~~~~~~~~
 
-def display_description(label, description):
+def display_and_save_description(label, description):
     print('Starting round: '.format(label))
     print(description)
+
+    output = open("challenges/{}.txt".format(label), "w")
+    output.write(description)
+    output.close()
+    print "Challenge description saved to file: {}.".format(output.name)
+
     return 'OK'
 
 

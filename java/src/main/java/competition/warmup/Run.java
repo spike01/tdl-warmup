@@ -62,13 +62,13 @@ public class Run {
         System.out.println(description);
 
         //Save description
-        File descriptionFile = new File("challenges" + File.separator + label + ".txt");
+        File output = new File("challenges" + File.separator + label + ".txt");
         try {
-            Files.write(description.getBytes(), descriptionFile);
+            Files.write(description.getBytes(), output);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("Challenge description saved to file: "+descriptionFile.getPath()+".");
+        System.out.println("Challenge description saved to file: "+output.getPath()+".");
 
         return "OK";
     }

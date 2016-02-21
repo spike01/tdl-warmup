@@ -33,7 +33,7 @@ def start_client(ready)
   client = TDL::Client.new(hostname: 'localhost', username: 'julian')
 
   rules = TDL::ProcessingRules.new
-  rules.on('display_description').call(method(:display_description)).then(publish)
+  rules.on('display_description').call(method(:display_and_save_description)).then(publish)
   rules.on('sum').call(App.new.method(:sum)).then(publish_if(ready))
 
   client.go_live_with(rules)
@@ -45,12 +45,15 @@ end
 
 # ~~~~~~~~~ Provided implementations ~~~~~~~~~
 
-def display_description(label, description)
+def display_and_save_description(label, description)
+  puts "Starting round: #{label}"
   puts description
+
   output = File.open("challenges/#{label}.txt", 'w')
   output << description
   output.close
   puts "Challenge description saved to file: #{output.path}."
+
   'OK'
 end
 
