@@ -12,27 +12,32 @@ import static tdl.client.actions.ClientActions.stop;
  */
 public class Run {
 
-    //~~~~~~~~~~~~~~ Setup ~~~~~~~~~~~~~~
-
     /**
-     * If you want to trial run: ./gradlew run -Dready=false
-     * Go live:                  ./gradlew run -Dready=true
+     * ~~~  How to run ~~~
+     *
+     * From command line:
+     *    If you want to trial run:     ./gradlew run
+     *    If you are ready to go live:  ./gradlew run -Dready=true
+     *
+     * From IDE:
+     *    Run this class from IDE.
+     *    Set the ARE_YOU_READY variable to "true" if ready to go live
      */
+    private static final boolean ARE_YOU_READY = false;
+
+    @SuppressWarnings({"PointlessBooleanExpression", "ConstantConditions"})
     public static void main(String[] args) throws Exception {
-        boolean ready = false;
-        if (args.length > 0) {
-            ready = Boolean.parseBoolean(args[0]);
-        }
+        boolean valueFromCommandline = args.length > 0 && Boolean.parseBoolean(args[0]);
+        boolean ready = ARE_YOU_READY || valueFromCommandline;
         System.out.println("Ready ? = "+ready);
 
         startClient(ready);
     }
 
-
     private static void startClient(final boolean ready) {
         Client client = new Client.Builder()
                 .setHostname("localhost")
-                .setUsername("iulian")
+                .setUsername("julian")
                 .create();
 
         ProcessingRules processingRules = new ProcessingRules() {{
@@ -44,11 +49,7 @@ public class Run {
     }
 
     public static ClientAction publishIf(boolean ready) {
-        if (ready) {
-            return publish();
-        } else {
-            return stop();
-        }
+        return ready ? publish() : stop();
     }
 
     //~~~~~~~ Provided implementations ~~~~~~~~~~~~~~

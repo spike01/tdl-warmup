@@ -16,7 +16,7 @@ rules
   .on('display_description')
   .call(->(label, details){
     puts details
-    output = File.open("challenges/#{label}.txt", "w")
+    output = File.open("challenges/#{label}.txt", 'w')
     output << details
     output.close
     puts "Challenge description saved to file #{output.path}."
