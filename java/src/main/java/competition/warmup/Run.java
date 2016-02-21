@@ -40,8 +40,8 @@ public class Run {
                 .create();
 
         ProcessingRules processingRules = new ProcessingRules() {{
-            on("display_description").call(Run::displayDescription).then(publish());
-            on("sum").call(App::sum).then(publishIf(ready));
+            on("display_description").call(p -> displayDescription(p[0], p[1])).then(publish());
+            on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
         }};
 
         client.goLiveWith(processingRules);
@@ -53,14 +53,17 @@ public class Run {
 
     //~~~~~~~ Provided implementations ~~~~~~~~~~~~~~
 
-    private static String displayDescription(String[] params) {
-        return displayDescription(params[0], params[1]);
-    }
-
     private static String displayDescription(String label, String description) {
         System.out.println("Starting round: "+label);
         System.out.println(description);
         return "OK";
     }
 
+    private static double asNumber(String s) {
+        return Double.parseDouble(s);
+    }
+
+    private static int asInt(String s) {
+        return Integer.parseInt(s);
+    }
 }
