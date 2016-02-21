@@ -8,8 +8,9 @@
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.10.5, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="little-plugger (v1.1.4, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="logging (v2.0.0, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="minitest (v5.8.3, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.11.2, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stomp (v1.3.4, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tdl-client-ruby (v0.0.4, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tdl-client-ruby (v0.8.1, jruby-9.0.0.0.rc2-p0) [gem]" level="application" />
   </component>
 </module>

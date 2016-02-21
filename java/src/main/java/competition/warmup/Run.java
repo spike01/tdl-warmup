@@ -14,15 +14,6 @@ public class Run {
 
     //~~~~~~~~~~~~~~ Setup ~~~~~~~~~~~~~~
 
-    public static ClientAction publishIf(boolean ready) {
-        if (ready) {
-            return publish();
-        } else {
-            return stop();
-        }
-    }
-
-
     /**
      * If you want to trial run: ./gradlew run -Dready=false
      * Go live:                  ./gradlew run -Dready=true
@@ -37,10 +28,10 @@ public class Run {
         startClient(ready);
     }
 
+
     private static void startClient(final boolean ready) {
         Client client = new Client.Builder()
                 .setHostname("localhost")
-                .setPort(61616)
                 .setUsername("iulian")
                 .create();
 
@@ -52,15 +43,23 @@ public class Run {
         client.goLiveWith(processingRules);
     }
 
-    //~~~~~~~ User implementations ~~~~~~~~~~~~~~
+    public static ClientAction publishIf(boolean ready) {
+        if (ready) {
+            return publish();
+        } else {
+            return stop();
+        }
+    }
+
+    //~~~~~~~ Provided implementations ~~~~~~~~~~~~~~
 
     private static String displayDescription(String[] params) {
         return displayDescription(params[0], params[1]);
     }
 
-    private static String displayDescription(String roundId, String info) {
-        System.out.println("Starting round: "+roundId);
-        System.out.println(info);
+    private static String displayDescription(String label, String description) {
+        System.out.println("Starting round: "+label);
+        System.out.println(description);
         return "OK";
     }
 
