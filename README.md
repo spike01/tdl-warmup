@@ -5,11 +5,11 @@ Warmup code provided to kickstart the challenge.
 ## A. How to run the warmup challenge
 
 1. Connect to the provided remote endpoint. Set your username and select "sum" challenge.
-2. Download and start the client for the language of choice:
+2. Clone this repo and navigate to the folder corresponding to your language of choice
   * Java
   * Ruby
   * Python
-3. Read instructions provided inside the client code
+3. Read instructions provided inside the code
 
 
 ## B. Language support
