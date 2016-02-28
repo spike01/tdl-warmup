@@ -18,8 +18,8 @@ Warmup code provided to kickstart the challenge.
 [nope]: https://upload.wikimedia.org/wikipedia/commons/f/f5/No_Cross.svg
 
 |                                     |  Java   | Python  | Ruby    |
-| ----------------------------------- | ------- | ------- | ------- |
-| Client Spec version v0.10           | ![nope] | ![yeah] | ![nope] |
+| ----------------------------------- |:-------:|:-------:|:-------:|
+| Client Spec version v0.10           | ![yeah] | ![yeah] | ![yeah] |
 ||
 | Minimal test setup                  | ![yeah] | ![yeah] | ![yeah] |
 | Description saved on disk           | ![yeah] | ![yeah] | ![yeah] |
