@@ -1,5 +1,6 @@
 # tdl-warmup
-The sample warmup code to kickstart the competition
+
+Warmup code provided to kickstart the challenge.
 
 ## A. How to run the challenge
 
