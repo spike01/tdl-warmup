@@ -28,5 +28,5 @@ Warmup code provided to kickstart the challenge.
 | Separate setup from client app code | ![yeah] | ![yeah] | ![yeah] |
 ||
 | Use "add numbers" example           | ![yeah] | ![yeah] | ![yeah] |
-| Step by step documentation          | ![yeah] | ![nope] | ![yeah] |
-| List of language dependencies       | ![yeah] | ![nope] | ![nope] |
+| Step by step documentation          | ![yeah] | ![yeah] | ![yeah] |
+| List of language dependencies       | ![yeah] | ![yeah] | ![yeah] |
