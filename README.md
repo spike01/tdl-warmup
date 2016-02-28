@@ -2,9 +2,9 @@
 
 Warmup code provided to kickstart the challenge.
 
-## A. How to run the challenge
+## A. How to run the warmup challenge
 
-1. Start the remote challenge. Try "sum" first.
+1. Connect to the provided remote endpoint. Set your username and select "sum" challenge.
 2. Download and start the client for the language of choice:
   * Java
   * Ruby
