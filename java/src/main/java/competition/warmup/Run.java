@@ -15,8 +15,8 @@ import static tdl.client.actions.ClientActions.stop;
 
 public class Run {
     // STEP 2. Set the hostname and username
-    private static final String HOSTNAME = "localhost";
-    private static final String USERNAME = "julian";
+    private static final String HOSTNAME = "server_hostname";
+    private static final String USERNAME = "your_username";
 
 
     // STEP 3. Run the client in trial mode and read instructions
@@ -30,7 +30,7 @@ public class Run {
      *    Just Run this class from IDE.
      */
 
-    private static final boolean I_AM_READY = false; // Can be overwritten from command line
+    private static final boolean I_AM_READY = false;
     // STEP 7. If your are satisfied with the implementation, run the client in live mode !
     /**
      * ~~~  How to run in live mode~~~
