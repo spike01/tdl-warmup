@@ -11,23 +11,37 @@ import java.io.IOException;
 import static tdl.client.actions.ClientActions.publish;
 import static tdl.client.actions.ClientActions.stop;
 
-/**
- * Created by julianghionoiu on 23/08/2015.
- */
-public class Run {
-    private static final boolean I_AM_READY = false;
+// STEP 1. Start the "sum_numbers" challenge from the remote web interface
 
+public class Run {
+    // STEP 2. Set the hostname and username
+    private static final String HOSTNAME = "localhost";
+    private static final String USERNAME = "julian";
+
+
+    // STEP 3. Run the client in trial mode and read instructions
     /**
-     * ~~~  How to run ~~~
+     * ~~~  How to run in trial mode~~~
      *
      * From command line:
      *    If you want to trial run:     ./gradlew run
+     *
+     * From IDE:
+     *    Just Run this class from IDE.
+     */
+
+    private static final boolean I_AM_READY = false; // Can be overwritten from command line
+    // STEP 7. If your are satisfied with the implementation, run the client in live mode !
+    /**
+     * ~~~  How to run in live mode~~~
+     *
+     * From command line:
      *    If you are ready to go live:  ./gradlew run -Dready=true
      *
      * From IDE:
-     *    Run this class from IDE.
-     *    Set the I_AM_READY variable to "true" if ready to go live
+     *    Set the I_AM_READY variable to "true" and run this class
      */
+    // STEP 8. Go to the web interface and mark the challenge as done
     @SuppressWarnings({"PointlessBooleanExpression", "ConstantConditions"})
     public static void main(String[] args) throws Exception {
         boolean valueFromCommandline = args.length > 0 && Boolean.parseBoolean(args[0]);
@@ -39,14 +53,17 @@ public class Run {
 
     private static void startClient(final boolean ready) {
         Client client = new Client.Builder()
-                .setHostname("localhost")
-                .setUsername("julian")
+                .setHostname(HOSTNAME)
+                .setUsername(USERNAME)
                 .create();
 
         ProcessingRules processingRules = new ProcessingRules() {{
             on("display_description").call(p -> displayAndSaveDescription(p[0], p[1])).then(publish());
-            on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
+            // STEP 4. Uncomment the following line to register the sum method and run again
+            //on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
         }};
+
+        // STEP 5. Fix the sum method implementation in competition.warmup.App
 
         client.goLiveWith(processingRules);
     }

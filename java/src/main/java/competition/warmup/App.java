@@ -6,7 +6,8 @@ package competition.warmup;
 public class App {
 
     public static int sum(int x, int y) {
-        return x + y;
+        // STEP 6. Run the test (competition.warmup.AppTest) and see it fail then implement the method
+        throw new RuntimeException("method not implemented");
     }
 
 }

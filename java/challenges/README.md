@@ -1,1 +1,1 @@
-§This folder will contain challenge descriptions.
+This folder will contain challenge descriptions.
