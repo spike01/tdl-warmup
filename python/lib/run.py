@@ -19,23 +19,39 @@ def configure_logging():
     logger.addHandler(ch)
 
 
+# STEP 1. Start the "sum_numbers" challenge from the remote web interface
+
 # ~~~~~~~~~ Setup ~~~~~~~~~
 
-I_AM_READY = False
+# STEP 2. Set the hostname and username
+HOSTNAME = 'server_hostname'
+USERNAME = 'your_username'
 
+# STEP 3. Run the client in trial mode and read instructions
+"""
+  ~~~  How to run ~~~
+
+  From command line:
+     If you want to trial run:     PYTHONPATH=lib python lib/run.py
+
+  From IDE:
+     Run this class from IDE.
+"""
+
+I_AM_READY = False
+# STEP 7. If your are satisfied with the implementation, run the client in live mode !
+"""
+  ~~~  How to run ~~~
+
+  From command line:
+     If you are ready to go live:  PYTHONPATH=lib python lib/run.py ready
+
+  From IDE:
+     Set the I_AM_READY variable to "true" and run this file
+"""
+# STEP 8. Go to the web interface and mark the challenge as done
 
 def main(args):
-    """
-      ~~~  How to run ~~~
-
-      From command line:
-         If you want to trial run:     PYTHONPATH=lib python lib/run.py
-         If you are ready to go live:  PYTHONPATH=lib python lib/run.py ready
-
-      From IDE:
-         Run this class from IDE.
-         Set the I_AM_READY variable to "true" if ready to go live
-    """
     value_from_commandline = len(args) > 0 and args[0] == "ready"
     ready = True if value_from_commandline else I_AM_READY
     print("Ready ? = {}".format(ready))
@@ -44,11 +60,14 @@ def main(args):
 
 
 def start_client(ready):
-    client = Client(hostname='localhost', username='julian')
+    client = Client(hostname=HOSTNAME, username=USERNAME)
 
     rules = ProcessingRules()
     rules.on("display_description").call(display_and_save_description).then("publish")
-    rules.on("sum").call(App.sum).then(publish_if(ready))
+    # STEP 4. Uncomment the following line to register the sum method and run again
+    # rules.on("sum").call(App.sum).then(publish_if(ready))
+
+    # STEP 5. Fix the sum method implementation in lib/app.py
 
     client.go_live_with(rules)
 
