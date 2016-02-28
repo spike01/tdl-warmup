@@ -16,16 +16,16 @@ The sample warmup code to kickstart the competition
 [yeah]: https://upload.wikimedia.org/wikipedia/commons/5/50/Yes_Check_Circle.svg
 [nope]: https://upload.wikimedia.org/wikipedia/commons/f/f5/No_Cross.svg
 
-|                                     | Java   | Ruby   | Python |
-| ----------------------------------- | ------ | ------ | ------ |
-| Client Spec version v0.9            | ![yes] | ![yes] | ![yes] |
+|                                     |  Java   |  Ruby   | Python  |
+| ----------------------------------- | ------- | ------- | ------- |
+| Client Spec version v0.9            | ![yeah] | ![yeah] | ![yeah] |
 ||
-| Minimal test setup                  | ![yes] | ![yes] | ![yes] |
-| Description saved on disk           | ![yes] | ![yes] | ![yes] |
-| Switch modes from command line      | ![yes] | ![yes] | ![yes] |
-| Switch modes from IDE               | ![yes] | ![yes] | ![yes] |
-| Separate setup from client app code | ![yes] | ![yes] | ![yes] |
+| Minimal test setup                  | ![yeah] | ![yeah] | ![yeah] |
+| Description saved on disk           | ![yeah] | ![yeah] | ![yeah] |
+| Switch modes from command line      | ![yeah] | ![yeah] | ![yeah] |
+| Switch modes from IDE               | ![yeah] | ![yeah] | ![yeah] |
+| Separate setup from client app code | ![yeah] | ![yeah] | ![yeah] |
 ||
-| Use "add numbers" example           | ![yes] | ![yes] | ![yes] |
-| Step by step documentation          | ![nope]  | ![nope]  | ![nope]  |
-| List of language dependencies       | ![nope]  | ![nope]  | ![nope]  |
+| Use "add numbers" example           | ![yeah] | ![yeah] | ![yeah] |
+| Step by step documentation          | ![nope] | ![nope] | ![nope] |
+| List of language dependencies       | ![nope] | ![nope] | ![nope] |
