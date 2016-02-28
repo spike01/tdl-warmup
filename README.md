@@ -19,7 +19,7 @@ Warmup code provided to kickstart the challenge.
 
 |                                     |  Java   | Python  | Ruby    |
 | ----------------------------------- | ------- | ------- | ------- |
-| Client Spec version v0.9            | ![yeah] | ![yeah] | ![yeah] |
+| Client Spec version v0.10           | ![nope] | ![yeah] | ![nope] |
 ||
 | Minimal test setup                  | ![yeah] | ![yeah] | ![yeah] |
 | Description saved on disk           | ![yeah] | ![yeah] | ![yeah] |
