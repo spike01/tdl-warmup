@@ -4,7 +4,7 @@ Warmup code provided to kickstart the challenge.
 
 ## A. How to run the warmup challenge
 
-1. Connect to the provided remote endpoint. Set your username and select "sum" challenge.
+1. Connect to the provided remote endpoint. Set your username and select "sum_numbers" challenge.
 2. Clone this repo and navigate to the folder corresponding to your language of choice
   * [Java](https://github.com/julianghionoiu/tdl-warmup/tree/master/java)
   * [Python](https://github.com/julianghionoiu/tdl-warmup/tree/master/python)
