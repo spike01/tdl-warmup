@@ -30,18 +30,6 @@ public class Run {
      *    Just Run this class from IDE.
      */
 
-    private static final boolean I_AM_READY = false;
-    // STEP 7. If your are satisfied with the implementation, run the client in live mode !
-    /**
-     * ~~~  How to run in live mode~~~
-     *
-     * From command line:
-     *    If you are ready to go live:  ./gradlew run -Dready=true
-     *
-     * From IDE:
-     *    Set the I_AM_READY variable to "true" and run this class
-     */
-    // STEP 8. Go to the web interface and mark the challenge as done
     @SuppressWarnings({"PointlessBooleanExpression", "ConstantConditions"})
     public static void main(String[] args) throws Exception {
         boolean valueFromCommandline = args.length > 0 && Boolean.parseBoolean(args[0]);
@@ -60,10 +48,11 @@ public class Run {
         ProcessingRules processingRules = new ProcessingRules() {{
             on("display_description").call(p -> displayAndSaveDescription(p[0], p[1])).then(publish());
             // STEP 4. Uncomment the following line to register the sum method and run again
-            //on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
+//            on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
         }};
 
-        // STEP 5. Fix the sum method implementation in competition.warmup.App
+        // STEP 5. Run the test (competition.warmup.AppTest) and see it fail
+        // STEP 6. Fix the sum method implementation in competition.warmup.App
 
         client.goLiveWith(processingRules);
     }
@@ -71,6 +60,21 @@ public class Run {
     public static ClientAction publishIf(boolean ready) {
         return ready ? publish() : stop();
     }
+
+    // STEP 7. If your are satisfied with the implementation, run the client in live mode !
+    private static final boolean I_AM_READY = false;
+    /**
+     * ~~~  How to run in live mode~~~
+     *
+     * From command line:
+     *    If you are ready to go live:  ./gradlew run -Dready=true
+     *
+     * From IDE:
+     *    Set the I_AM_READY variable to "true" and run this class
+     */
+
+    // STEP 8. Go to the web interface and mark the challenge as done
+
 
     //~~~~~~~ Provided implementations ~~~~~~~~~~~~~~
 
