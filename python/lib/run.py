@@ -27,7 +27,8 @@ def configure_logging():
 HOSTNAME = 'server_hostname'
 USERNAME = 'your_username'
 
-# STEP 3. Run the client in trial mode and read instructions
+# STEP 3. Run the client in trial mode and read the instructions
+I_AM_READY = False
 """
   ~~~  How to run ~~~
 
@@ -37,19 +38,6 @@ USERNAME = 'your_username'
   From IDE:
      Run this class from IDE.
 """
-
-I_AM_READY = False
-# STEP 7. If your are satisfied with the implementation, run the client in live mode !
-"""
-  ~~~  How to run ~~~
-
-  From command line:
-     If you are ready to go live:  PYTHONPATH=lib python lib/run.py ready
-
-  From IDE:
-     Set the I_AM_READY variable to "true" and run this file
-"""
-# STEP 8. Go to the web interface and mark the challenge as done
 
 def main(args):
     value_from_commandline = len(args) > 0 and args[0] == "ready"
@@ -67,13 +55,27 @@ def start_client(ready):
     # STEP 4. Uncomment the following line to register the sum method and run again
     # rules.on("sum").call(App.sum).then(publish_if(ready))
 
-    # STEP 5. Fix the sum method implementation in lib/app.py
+    # STEP 5. Run the test (test/test_app.py) and see it fail
+    # STEP 6. Fix the sum method implementation in lib/app.py
 
     client.go_live_with(rules)
 
 
 def publish_if(ready):
     return "publish" if ready else "stop"
+
+# STEP 7. If your are satisfied with the implementation, run the client in live mode !
+"""
+  ~~~  How to run ~~~
+
+  From command line:
+     If you are ready to go live:  PYTHONPATH=lib python lib/run.py ready
+
+  From IDE:
+     Set the I_AM_READY variable to "true" and run this file
+"""
+
+# STEP 8. Go to the web interface and mark the challenge as done
 
 
 # ~~~~~~~~~ Provided implementations ~~~~~~~~~

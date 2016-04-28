@@ -18,8 +18,8 @@ public class Run {
     private static final String HOSTNAME = "server_hostname";
     private static final String USERNAME = "your_username";
 
-
     // STEP 3. Run the client in trial mode and read the instructions
+    private static final boolean I_AM_READY = false;
     /**
      * ~~~  How to run in trial mode~~~
      *
@@ -62,7 +62,6 @@ public class Run {
     }
 
     // STEP 7. If your are satisfied with the implementation, run the client in live mode !
-    private static final boolean I_AM_READY = false;
     /**
      * ~~~  How to run in live mode~~~
      *
