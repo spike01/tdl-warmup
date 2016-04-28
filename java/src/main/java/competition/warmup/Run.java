@@ -19,7 +19,7 @@ public class Run {
     private static final String USERNAME = "your_username";
 
 
-    // STEP 3. Run the client in trial mode and read instructions
+    // STEP 3. Run the client in trial mode and read the instructions
     /**
      * ~~~  How to run in trial mode~~~
      *
