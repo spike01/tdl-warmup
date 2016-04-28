@@ -17,6 +17,7 @@ HOSTNAME = 'server_hostname'
 USERNAME = 'your_username'
 
 # STEP 3. Run the client in trial mode and read instructions
+I_AM_READY = false
 # ~~~  How to run ~~~
 #
 # From command line:
@@ -26,18 +27,6 @@ USERNAME = 'your_username'
 #     Run this file from your IDE
 #
 
-
-I_AM_READY = false
-# STEP 7. If your are satisfied with the implementation, run the client in live mode !
-# ~~~  How to run ~~~
-#
-# From command line:
-#     If you are ready to go live:  rake run ready=true
-#
-# From IDE:
-#     Set the I_AM_READY variable to "true" and run this file
-#
-# STEP 8. Go to the web interface and mark the challenge as done
 def main(argv)
   value_from_commandline = (argv.length > 0 and argv[0] == 'true')
   ready = (I_AM_READY or value_from_commandline)
@@ -54,7 +43,8 @@ def start_client(ready)
   # STEP 4. Uncomment the following line to register the sum method and run again
   # rules.on('sum').call(App.new.method(:sum)).then(publish_if(ready))
 
-  # STEP 5. Fix the sum method implementation in lib/app.rb
+  # STEP 5. Run the test (test/app_test.rb) and see it fail
+  # STEP 6. Fix the sum method implementation in lib/app.rb
 
   client.go_live_with(rules)
 end
@@ -62,6 +52,18 @@ end
 def publish_if(ready)
   ready ? publish : stop
 end
+
+# STEP 7. If your are satisfied with the implementation, run the client in live mode !
+# ~~~  How to run ~~~
+#
+# From command line:
+#     If you are ready to go live:  rake run ready=true
+#
+# From IDE:
+#     Set the I_AM_READY variable to "true" and run this file
+#
+
+# STEP 8. Go to the web interface and mark the challenge as done
 
 # ~~~~~~~~~ Provided implementations ~~~~~~~~~
 
