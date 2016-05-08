@@ -11,7 +11,8 @@ Warmup code provided to kickstart the challenge.
   * [Java](https://github.com/julianghionoiu/tdl-warmup/tree/master/java)
   * [Python](https://github.com/julianghionoiu/tdl-warmup/tree/master/python)
   * [Ruby](https://github.com/julianghionoiu/tdl-warmup/tree/master/ruby)
-3. Read instructions provided inside the code
+3. Read the language specific requirements
+4. Follow the "STEP" comments located inside the code
 
 
 ## B. Language support
