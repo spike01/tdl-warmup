@@ -16,7 +16,7 @@ include TDL::ClientActions
 HOSTNAME = 'server_hostname'
 USERNAME = 'your_username'
 
-# STEP 3. Run the client in trial mode and read instructions
+# STEP 3. Run the client in trial mode
 I_AM_READY = false
 # ~~~  How to run ~~~
 #
@@ -35,16 +35,18 @@ def main(argv)
   start_client(ready)
 end
 
+# STEP 4. Read the instructions provided on screen. They are also saved as a file under the "challenges" folder.
+
 def start_client(ready)
   client = TDL::Client.new(hostname: HOSTNAME, username: USERNAME)
 
   rules = TDL::ProcessingRules.new
   rules.on('display_description').call(method(:display_and_save_description)).then(publish)
-  # STEP 4. Uncomment the following line to register the sum method and run again
+  # STEP 5. Uncomment the following line to register the sum method and run again
   # rules.on('sum').call(App.new.method(:sum)).then(publish_if(ready))
 
-  # STEP 5. Run the test (test/app_test.rb) and see it fail
-  # STEP 6. Fix the sum method implementation in lib/app.rb
+  # STEP 6. Run the test (test/app_test.rb) and see it fail
+  # STEP 7. Fix the sum method implementation in lib/app.rb
 
   client.go_live_with(rules)
 end
@@ -53,7 +55,7 @@ def publish_if(ready)
   ready ? publish : stop
 end
 
-# STEP 7. If your are satisfied with the implementation, run the client in live mode !
+# STEP 8. If your are satisfied with the implementation, run the client in live mode !
 # ~~~  How to run ~~~
 #
 # From command line:
@@ -63,7 +65,7 @@ end
 #     Set the I_AM_READY variable to "true" and run this file
 #
 
-# STEP 8. Go to the web interface and mark the challenge as done
+# STEP 9. Go to the web interface and mark the challenge as done
 
 # ~~~~~~~~~ Provided implementations ~~~~~~~~~
 

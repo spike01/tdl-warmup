@@ -18,7 +18,7 @@ public class Run {
     private static final String HOSTNAME = "server_hostname";
     private static final String USERNAME = "your_username";
 
-    // STEP 3. Run the client in trial mode and read the instructions
+    // STEP 3. Run the client in trial mode
     private static final boolean I_AM_READY = false;
     /**
      * ~~~  How to run in trial mode~~~
@@ -39,6 +39,8 @@ public class Run {
         startClient(ready);
     }
 
+    // STEP 4. Read the instructions provided on screen. They are also saved as a file under the "challenges" folder.
+
     private static void startClient(final boolean ready) {
         Client client = new Client.Builder()
                 .setHostname(HOSTNAME)
@@ -47,12 +49,12 @@ public class Run {
 
         ProcessingRules processingRules = new ProcessingRules() {{
             on("display_description").call(p -> displayAndSaveDescription(p[0], p[1])).then(publish());
-            // STEP 4. Uncomment the following line to register the sum method and run again
+            // STEP 5. Uncomment the following line to register the sum method and run again
 //            on("sum").call(p -> App.sum(asInt(p[0]), asInt(p[1]))).then(publishIf(ready));
         }};
 
-        // STEP 5. Run the test (competition.warmup.AppTest) and see it fail
-        // STEP 6. Fix the sum method implementation in competition.warmup.App
+        // STEP 6. Run the test (competition.warmup.AppTest) and see it fail
+        // STEP 7. Fix the sum method implementation in competition.warmup.App
 
         client.goLiveWith(processingRules);
     }
@@ -61,7 +63,7 @@ public class Run {
         return ready ? publish() : stop();
     }
 
-    // STEP 7. If your are satisfied with the implementation, run the client in live mode !
+    // STEP 8. If your are satisfied with the implementation, run the client in live mode !
     /**
      * ~~~  How to run in live mode~~~
      *
@@ -72,7 +74,7 @@ public class Run {
      *    Set the I_AM_READY variable to "true" and run this class
      */
 
-    // STEP 8. Go to the web interface and mark the challenge as done
+    // STEP 9. Go to the web interface and mark the challenge as done
 
 
     //~~~~~~~ Provided implementations ~~~~~~~~~~~~~~
