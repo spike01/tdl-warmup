@@ -13,7 +13,7 @@ class ClientTest < Minitest::Test
   attr_reader :app
 
   def test_sum
-    assert_equal app.sum(1, 2), 3, 'App should add two numbers'
+    assert_equal 3, app.sum(1, 2), 'App should add two numbers'
   end
 
 end
