@@ -13,8 +13,11 @@ Warmup code provided to kickstart the challenge.
   * [Ruby](https://github.com/julianghionoiu/tdl-warmup/tree/master/ruby)
 3. Read the language specific instructions
 
+## B. How the systems works
 
-## B. Language support
+![System diagram](https://docs.google.com/drawings/d/1ct0yUxrxA6Nz-b-H0IQ-98JNIzriC_n1xmgWM7gMkXs/pub?w=959&h=639)
+
+## C. Language support
 
 [yeah]: https://upload.wikimedia.org/wikipedia/commons/5/50/Yes_Check_Circle.svg
 [nope]: https://upload.wikimedia.org/wikipedia/commons/f/f5/No_Cross.svg
