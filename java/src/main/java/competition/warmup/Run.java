@@ -14,9 +14,9 @@ import static tdl.client.actions.ClientActions.stop;
 // STEP 1. Start the "sum_numbers" challenge from the remote web interface
 
 public class Run {
-    // STEP 2. Set the hostname and username
+    // STEP 2. Set the hostname and email
     private static final String HOSTNAME = "server_hostname";
-    private static final String USERNAME = "your_username";
+    private static final String EMAIL = "your_email";
 
     // STEP 3. Run the client in trial mode
     private static final boolean I_AM_READY = false;
@@ -44,7 +44,7 @@ public class Run {
     private static void startClient(final boolean ready) {
         Client client = new Client.Builder()
                 .setHostname(HOSTNAME)
-                .setUsername(USERNAME)
+                .setUniqueId(EMAIL)
                 .create();
 
         ProcessingRules processingRules = new ProcessingRules() {{
