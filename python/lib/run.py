@@ -23,9 +23,9 @@ def configure_logging():
 
 # ~~~~~~~~~ Setup ~~~~~~~~~
 
-# STEP 2. Set the hostname and username
+# STEP 2. Set the hostname and email
 HOSTNAME = 'server_hostname'
-USERNAME = 'your_username'
+EMAIL = 'your_email'
 
 # STEP 3. Run the client in trial mode
 I_AM_READY = False
@@ -49,7 +49,7 @@ def main(args):
 # STEP 4. Read the instructions provided on screen. They are also saved as a file under the "challenges" folder.
 
 def start_client(ready):
-    client = Client(hostname=HOSTNAME, username=USERNAME)
+    client = Client(hostname=HOSTNAME, unique_id=EMAIL)
 
     rules = ProcessingRules()
     rules.on("display_description").call(display_and_save_description).then("publish")
