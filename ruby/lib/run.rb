@@ -12,9 +12,9 @@ include TDL::ClientActions
 
 # ~~~~~~~~~ Setup ~~~~~~~~~
 
-# STEP 2. Set the hostname and username
+# STEP 2. Set the hostname and email
 HOSTNAME = 'server_hostname'
-USERNAME = 'your_username'
+EMAIL = 'your_email'
 
 # STEP 3. Run the client in trial mode
 I_AM_READY = false
@@ -38,7 +38,7 @@ end
 # STEP 4. Read the instructions provided on screen. They are also saved as a file under the "challenges" folder.
 
 def start_client(ready)
-  client = TDL::Client.new(hostname: HOSTNAME, username: USERNAME)
+  client = TDL::Client.new(hostname: HOSTNAME, unique_id: EMAIL)
 
   rules = TDL::ProcessingRules.new
   rules.on('display_description').call(method(:display_and_save_description)).then(publish)
