@@ -13,8 +13,8 @@ include TDL::ClientActions
 # ~~~~~~~~~ Setup ~~~~~~~~~
 
 # STEP 2. Set the hostname and email
-HOSTNAME = 'server_hostname'
-EMAIL = 'your_email'
+HOSTNAME = '192.168.49.63'
+EMAIL = 'spike01@gmail.com'
 
 # STEP 3. Run the client in trial mode
 I_AM_READY = false
@@ -43,7 +43,12 @@ def start_client(ready)
   rules = TDL::ProcessingRules.new
   rules.on('display_description').call(method(:display_and_save_description)).then(publish)
   # STEP 5. Uncomment the following line to register the sum method and run again
-  # rules.on('sum').call(App.new.method(:sum)).then(publish_if(ready))
+   rules.on('sum').call(App.new.method(:sum)).then(publish_if(ready))
+   rules.on('increment').call(App.new.method(:increment)).then(publish_if(ready))
+   rules.on('to_uppercase').call(App.new.method(:to_uppercase)).then(publish_if(ready))
+   rules.on('count_lines').call(App.new.method(:count_lines)).then(publish_if(ready))
+   rules.on('hello').call(App.new.method(:hello)).then(publish_if(ready))
+   rules.on('fizz_buzz').call(App.new.method(:fizz_buzz)).then(publish_if(ready))
 
   # STEP 6. Run the test (test/app_test.rb) and see it fail
   # STEP 7. Fix the sum method implementation in lib/app.rb

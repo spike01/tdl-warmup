@@ -20,8 +20,5 @@ DEPENDENCIES
   minitest (~> 5.8.3)
   tdl-client-ruby (= 0.10.2)
 
-RUBY VERSION
-   ruby 2.2.2p95
-
 BUNDLED WITH
    1.12.5
