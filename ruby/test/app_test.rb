@@ -36,31 +36,4 @@ class ClientTest < Minitest::Test
     assert_equal 'Hello, John!', app.hello('John'), 'App should greet people' 
   end
 
-  def test_fizz_deluxe
-    assert_equal 'fizz fake deluxe', app.fizz_buzz(3), 'App fizz deluxes for 3'
-  end
-
-  def test_buzz_deluxe
-    assert_equal 'buzz fake deluxe', app.fizz_buzz(5), 'App buzz deluxes for 5'
-  end
-
-  def test_buzz
-    assert_equal 'buzz', app.fizz_buzz(10), 'App buzzes for 10'
-  end
-
-  def test_fizz_buzz_deluxe
-    assert_equal 'fizz buzz fake deluxe', app.fizz_buzz(15), 'App fizz buzzes for 15'
-  end
-
-  def test_return_number
-    assert_equal 1, app.fizz_buzz(1), 'App returns the number otherwise'
-  end
-
-  def test_36
-    assert_equal 'fizz deluxe', app.fizz_buzz(36)
-  end
-
-  def test_3510
-    assert_equal 'fizz buzz deluxe', app.fizz_buzz(3510)
-  end
 end
